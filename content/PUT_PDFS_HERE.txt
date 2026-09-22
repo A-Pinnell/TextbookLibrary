@@ -1,1 +1,0 @@
-Put your PDF files in this folder and list them in ../pdfs.json.
