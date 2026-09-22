@@ -1,0 +1,14 @@
+[
+  {
+    "file": "textbook.pdf",
+    "title": "Textbook",
+    "courseCode": "SOCI 1010",
+    "searchable": true
+  },
+  {
+    "file": "scanned-book.pdf",
+    "title": "Scanned Book",
+    "courseCode": "SOCI 1020",
+    "searchable": false
+  }
+]

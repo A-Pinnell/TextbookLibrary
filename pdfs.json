@@ -1,0 +1,26 @@
+[
+  {
+    "file": "soci.pdf",
+    "title": "Society and Technological Change - 9th Edition",
+    "courseCode": "SOCI 2755",
+    "searchable": true
+  },
+  {
+    "file": "arch1.pdf",
+    "title": "Computer system architecture, 3rd ed, Pearson",
+    "courseCode": "COMP 2453",
+    "searchable": false
+  },
+  {
+    "file": "arch2.pdf",
+    "title": "Computer Organization Architecture 11th",
+    "courseCode": "COMP 2453",
+    "searchable": true
+  },
+  {
+    "file": "soft.pdf",
+    "title": "Software Engineering - Ian Sommerville",
+    "courseCode": "COMP 3415",
+    "searchable": true
+  }
+]

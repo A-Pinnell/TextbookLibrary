@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textbook Library</title>
+  <link rel="stylesheet" href="css/viewer.css">
+</head>
+<body>
+  <button id="soundToggle" class="sound-toggle" type="button" aria-label="Mute sound effects" aria-pressed="false">🔊</button>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Mute music" aria-pressed="false">♫</button>
+  <div class="sky">
+    <div class="star-field" aria-hidden="true">
+      <i style="--x:4%;--y:12%;--s:2px;--d:3.1s;--r:18deg"></i><i style="--x:9%;--y:31%;--s:1px;--d:4.7s;--r:-24deg"></i><i style="--x:15%;--y:7%;--s:2px;--d:3.8s;--r:31deg"></i><i style="--x:21%;--y:22%;--s:1px;--d:5.2s;--r:-18deg"></i><i style="--x:27%;--y:13%;--s:2px;--d:4.1s;--r:42deg"></i><i style="--x:33%;--y:35%;--s:1px;--d:3.5s;--r:-35deg"></i><i style="--x:39%;--y:9%;--s:2px;--d:4.9s;--r:22deg"></i><i style="--x:45%;--y:27%;--s:1px;--d:3.3s;--r:-28deg"></i><i style="--x:51%;--y:15%;--s:2px;--d:5.5s;--r:37deg"></i><i style="--x:57%;--y:39%;--s:1px;--d:4.4s;--r:-16deg"></i><i style="--x:63%;--y:6%;--s:2px;--d:3.7s;--r:29deg"></i><i style="--x:69%;--y:25%;--s:1px;--d:5.1s;--r:-41deg"></i><i style="--x:75%;--y:11%;--s:2px;--d:4.0s;--r:20deg"></i><i style="--x:81%;--y:33%;--s:1px;--d:3.6s;--r:-30deg"></i><i style="--x:87%;--y:18%;--s:2px;--d:4.8s;--r:45deg"></i><i style="--x:94%;--y:29%;--s:1px;--d:5.4s;--r:-22deg"></i><i style="--x:12%;--y:48%;--s:1px;--d:4.3s;--r:27deg"></i><i style="--x:24%;--y:54%;--s:2px;--d:3.9s;--r:-33deg"></i><i style="--x:36%;--y:46%;--s:1px;--d:5.0s;--r:19deg"></i><i style="--x:48%;--y:58%;--s:2px;--d:4.6s;--r:-26deg"></i><i style="--x:60%;--y:51%;--s:1px;--d:3.4s;--r:39deg"></i><i style="--x:72%;--y:61%;--s:2px;--d:5.3s;--r:-17deg"></i><i style="--x:84%;--y:49%;--s:1px;--d:4.2s;--r:32deg"></i><i style="--x:91%;--y:58%;--s:2px;--d:3.8s;--r:-38deg"></i>
+    </div>
+    <div class="cloud-track" aria-hidden="true">
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <div class="cloud c4"></div><div class="cloud c5"></div><div class="cloud c6"></div>
+      <div class="cloud c7"></div><div class="cloud c8"></div><div class="cloud c9"></div>
+    </div>
+  </div>
+
+  <main class="building">
+    <div class="pillar left"></div>
+    <div class="pillar right"></div>
+
+    <section class="content">
+      <header>
+        <div class="title-wrap">
+          <div class="university"><span class="diamond"></span> TEXTBOOK LIBRARY</div>
+          <h1><span class="yellow">TEXTBOOK</span> <span class="white">LIBRARY</span></h1>
+          <p class="tagline">BROWSE AND READ YOUR TEXTBOOKS</p>
+        </div>
+      </header>
+
+      <section class="viewer-area">
+        <aside class="library-panel">
+          <div class="panel-heading">
+            <span>CONTENT</span>
+            <button id="refreshBtn" title="Refresh PDF list">↻</button>
+          </div>
+
+          <label class="upload-button">
+            <input id="filePicker" type="file" accept="application/pdf,.pdf">
+            OPEN PDF
+          </label>
+
+          <p class="hint">You can also drag a PDF anywhere onto the page.</p>
+
+          <div id="pdfList" class="pdf-list">
+            <div class="empty">No content PDFs listed yet.</div>
+          </div>
+
+          <div class="panel-note">
+            <strong>Website files</strong>
+            <span>Put PDFs in <code>content/</code> and add their names to <code>pdfs.json</code>.</span>
+          </div>
+        </aside>
+
+        <section class="reader">
+          <div class="reader-toolbar">
+            <div class="file-heading">
+              <div class="file-course" id="fileCourse">NO COURSE</div>
+              <div class="file-title" id="fileTitle">No PDF selected</div>
+            </div>
+            <div class="reader-controls">
+              <div class="search-controls">
+                <input id="searchInput" type="search" placeholder="Find in PDF..." aria-label="Find text in PDF">
+                <button id="searchPrev" disabled title="Previous match">↑</button>
+                <button id="searchNext" disabled title="Next match">↓</button>
+                <span id="searchCount">0 / 0</span>
+              </div>
+              <button id="prevPage" disabled>‹</button>
+              <span class="page-jump"><input id="pageNum" type="number" min="1" value="0" aria-label="Current PDF page"> <span>/</span> <span id="pageCount">0</span></span>
+              <button id="nextPage" disabled>›</button>
+              <button id="zoomOut" disabled>−</button>
+              <span id="zoomValue">100%</span>
+              <button id="zoomIn" disabled>+</button>
+              <button id="fitBtn" disabled>FIT</button>
+              <button id="newTabBtn" disabled>↗</button>
+            </div>
+          </div>
+
+          <div id="dropZone" class="pdf-stage">
+            <div id="emptyState" class="empty-state">
+              <div class="pdf-icon">PDF</div>
+              <h2>Select a document</h2>
+              <p>Choose a PDF from the content list.</p>
+              <label class="stage-open">
+                <input id="stagePicker" type="file" accept="application/pdf,.pdf">
+                Choose PDF
+              </label>
+            </div>
+            <div id="pageContainer" class="page-container" hidden></div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <div id="loading" class="loading"><span></span> LOADING DOCUMENT...</div>
+  <div id="toast" class="toast"></div>
+
+  <!-- PDF.js is only used to render the PDF; the actual documents stay in your site. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.4.54/pdf.min.mjs"
+          type="module"></script>
+  <script src="js/viewer.js" type="module"></script>
+</body>
+</html>
