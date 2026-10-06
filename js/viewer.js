@@ -740,10 +740,10 @@ async function loadManifest() {
     const backButton = document.createElement("button");
     backButton.type = "button";
     backButton.className = "back-menu-button";
-    backButton.textContent = "← BACK TO MENU";
+    backButton.textContent = "← GO TO QuizHub";
     backButton.addEventListener("click", () => {
       playSound("arrow");
-      window.location.href = "https://www.google.com";
+      window.location.href = "https://a-pinnell.github.io/QuizHub/";
     });
     list.appendChild(backButton);
 
